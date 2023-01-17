@@ -1,0 +1,18 @@
+System.setProperty("webdriver.chrome.driver","C:\\Users\\adity\\BrowserDriver\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://sakshingp.github.io/assignment/login.html");
+
+	    WebElement lp=driver.findElement(By.xpath("//*[@id='username']"));
+	    lp.sendKeys("selenium");
+		WebElement ln =driver.findElement(By.xpath("//*[@id='password']"));
+		ln.sendKeys("008");
+		WebElement lm=driver.findElement(By.xpath("//*[@id='log-in']"));
+		lm.click();
+		String openbrowser  =driver.findElement(By.xpath("/html/body/div/div[1]/div[1]/a/div[2]")).getText();
+		if(openbrowser.equals("DEMO"))
+		{
+			System.out.println("Sucessfully login ");
+			WebElement am=driver.findElement(By.xpath("//*[@id='amount']"));
+			am.click();
+		}
